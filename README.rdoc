@@ -1,0 +1,11 @@
+== Application Environment
+
+* Rails version	4.2.5.1
+* Ruby version	2.1.5-p273 (x86_64-linux)
+* RubyGems version	2.4.3
+* Rack version	1.6.4
+* JavaScript Runtime	Node.js (V8)
+* Application root	/home/nitrous/code/workout_app
+* Environment	development
+* Database adapter	sqlite3
+* Database schema version	0
