@@ -27,7 +27,17 @@
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <% if user_signed_in? %>
+                <div class="navbar-left">
+                  <p class="navbar-text">
+                    Signed in as <%= "#{current_user.email}" %>
+                  </p>
+                </div>
+                <li> <%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li>
+              <%else%>
+                <li> <%= link_to "Sign up", new_user_registration_path %> </li>
+                <li> <%= link_to "Sign in", new_user_session_path %> </li>
+              <%end%>
             </ul>
           </div>
         </div>
