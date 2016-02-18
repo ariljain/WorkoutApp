@@ -19,6 +19,12 @@ Rails.application.routes.draw do
   resources :user do
     resources :exercises
   end
+  
+  resource :dashboard, only: [:index] do
+    collection do
+      post :search, to: 'dashboard#search'
+    end
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do
