@@ -16,7 +16,7 @@
           <td> <%= truncate(ex.workout, length: 100) %> </td>
           <td> <%= ex.workout_date %> </td>
           <td> <%= link_to "Show", [current_user, ex] %> </td>
-          <td> <%= link_to "Edit", [current_user, ex] %> </td>
+          <td> <%= link_to "Edit", [:edit, current_user, ex] %> </td>
           <td> <%= link_to "Delete", [current_user, ex], method: :delete,
                     date: {confirm: "Are you sure ?"} %> </td>
         </tr>
