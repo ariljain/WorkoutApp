@@ -32,3 +32,18 @@
   <% end %>
   <%= link_to "New Workout", new_user_exercise_path(current_user), class: 'btn btn-primary link'%>
 </div>
+
+<div class="col-md-4 col-xs-12">
+  <h1 class="text-center"> My Friends </h1>
+
+  <% @friends.each do |friend| %>
+  <div class="cold-md-offset-3 col-md-6 friend_name">
+      <%= link_to friend.full_name, friendship_path(current_user.current_friendship(friend)), class: "friend-name" %>
+  </div>
+  <div class="col-md-3">
+    <%= link_to "Unfollow", friendship_path(current_user.current_friendship(friend)), method: :delete,
+      data: {confirm: "Are you sure?"}, class: "btn btn-primary btn-sm link" %>
+  </div>
+  <br/>
+  <% end %>
+</div>

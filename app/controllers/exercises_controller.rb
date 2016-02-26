@@ -5,6 +5,7 @@ class ExercisesController < ApplicationController
 
   def index
     @exercises = current_user.exercises.all.order("workout_date DESC")
+    @friends = current_user.friends
   end
 
   def new
