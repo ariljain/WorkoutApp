@@ -18,7 +18,7 @@
           <td> <%= link_to "Show", [current_user, ex] %> </td>
           <td> <%= link_to "Edit", [:edit, current_user, ex] %> </td>
           <td> <%= link_to "Delete", [current_user, ex], method: :delete,
-                    date: {confirm: "Are you sure ?"} %> </td>
+                    data: {confirm: "Are you sure ?"} %> </td>
         </tr>
         <% end %>
       </tbody>
@@ -39,11 +39,14 @@
   <% @friends.each do |friend| %>
   <div class="cold-md-offset-3 col-md-6 friend_name">
       <%= link_to friend.full_name, friendship_path(current_user.current_friendship(friend)), class: "friend-name" %>
+   <br/>
   </div>
   <div class="col-md-3">
-    <%= link_to "Unfollow", friendship_path(current_user.current_friendship(friend)), method: :delete,
-      data: {confirm: "Are you sure?"}, class: "btn btn-primary btn-sm link" %>
+    <div class="unfollow-link">
+      <%= link_to "Unfollow", friendship_path(current_user.current_friendship(friend)), method: :delete,
+      data: {confirm: "Are you sure?"}, class: "btn btn-primary btn-xs link" %>
+     </div>
+    <br/>
   </div>
-  <br/>
   <% end %>
 </div>
